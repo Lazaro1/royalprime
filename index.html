@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proposta Comercial — Royal Prime</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet" />
+  <style>
+    :root {
+      --navy: #1a2744;
+      --navy-light: #243352;
+      --gold: #c9a84c;
+      --gold-light: #d4b96a;
+      --gold-pale: #f5f0e1;
+      --cream: #faf9f7;
+      --surface: #ffffff;
+      --surface-alt: #f5f4f1;
+      --charcoal: #2d2d2d;
+      --text-primary: #1a1a1a;
+      --text-secondary: #555555;
+      --text-tertiary: #888888;
+      --text-muted: #aaaaaa;
+      --border-soft: rgba(26, 39, 68, 0.08);
+      --border-medium: rgba(26, 39, 68, 0.15);
+      --border-gold: rgba(201, 168, 76, 0.3);
+      --shadow-sm: 0 1px 3px rgba(26, 39, 68, 0.06);
+      --shadow-md: 0 4px 12px rgba(26, 39, 68, 0.08);
+      --shadow-lg: 0 8px 30px rgba(26, 39, 68, 0.1);
+      --radius-sm: 4px;
+      --radius-md: 8px;
+      --radius-lg: 12px;
+      --space-xs: 4px;
+      --space-sm: 8px;
+      --space-md: 16px;
+      --space-lg: 24px;
+      --space-xl: 40px;
+      --space-2xl: 64px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--cream);
+      color: var(--text-primary);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .page {
+      min-height: 100vh;
+      padding: var(--space-xl) var(--space-md);
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: var(--surface);
+      padding: var(--space-2xl);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* Header */
+    .header {
+      padding-bottom: var(--space-xl);
+      margin-bottom: var(--space-xl);
+      border-bottom: 1px solid var(--border-soft);
+      position: relative;
+    }
+
+    .header::after {
+      content: "";
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: var(--gold);
+    }
+
+    .header-label {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--gold);
+      margin-bottom: var(--space-sm);
+    }
+
+    h1 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: -0.3px;
+      line-height: 1.2;
+    }
+
+    .subtitle {
+      font-size: 15px;
+      color: var(--text-secondary);
+      margin-top: var(--space-sm);
+      font-weight: 400;
+    }
+
+    .meta {
+      display: flex;
+      gap: var(--space-lg);
+      margin-top: var(--space-md);
+      font-size: 13px;
+      color: var(--text-tertiary);
+    }
+
+    .meta-item strong {
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    /* Sections */
+    .section {
+      margin-bottom: var(--space-xl);
+      padding-left: var(--space-lg);
+      border-left: 3px solid var(--border-soft);
+      transition: border-color 0.2s ease;
+    }
+
+    .section:hover {
+      border-left-color: var(--gold);
+    }
+
+    h2 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: var(--space-md);
+      letter-spacing: -0.2px;
+    }
+
+    p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      margin-bottom: var(--space-sm);
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Lists */
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li {
+      font-size: 14px;
+      color: var(--text-secondary);
+      padding: var(--space-xs) 0;
+      padding-left: var(--space-md);
+      position: relative;
+    }
+
+    /* Cards */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--space-md);
+      margin-top: var(--space-md);
+    }
+
+    .card {
+      background: var(--surface-alt);
+      padding: var(--space-lg);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-soft);
+      transition: all 0.2s ease;
+    }
+
+    .card:hover {
+      border-color: var(--border-medium);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .card h3 {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: var(--space-sm);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .card ul li {
+      font-size: 13px;
+      padding: 3px 0;
+    }
+
+    /* Table */
+    .table-wrapper {
+      margin-top: var(--space-md);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border-soft);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    thead th {
+      background: var(--navy);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      padding: var(--space-sm) var(--space-md);
+      text-align: left;
+    }
+
+    thead th:last-child {
+      text-align: right;
+    }
+
+    tbody td {
+      padding: var(--space-sm) var(--space-md);
+      font-size: 13px;
+      color: var(--text-secondary);
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    tbody td:last-child {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+
+    tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    tbody tr:hover {
+      background: var(--cream);
+    }
+
+    .total-row td {
+      font-weight: 700;
+      color: var(--navy);
+      background: var(--gold-pale);
+      font-size: 14px;
+    }
+
+    /* Investment Cards */
+    .investment-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--space-md);
+      margin-top: var(--space-md);
+    }
+
+    .investment-card {
+      background: var(--surface);
+      padding: var(--space-lg);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .investment-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--gold);
+    }
+
+    .investment-card.support::before {
+      background: var(--navy);
+    }
+
+    .investment-card h3 {
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-tertiary);
+      margin-bottom: var(--space-sm);
+    }
+
+    .price {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--navy);
+      margin: var(--space-sm) 0;
+    }
+
+    .price-note {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: var(--space-md);
+    }
+
+    .payment-list {
+      margin-top: var(--space-sm);
+    }
+
+    .payment-list li {
+      font-size: 13px;
+      padding: 4px 0;
+      padding-left: var(--space-md);
+    }
+
+    .payment-list li::before {
+      width: 4px;
+      height: 4px;
+    }
+
+    /* Blockquote */
+    blockquote {
+      border-left: 3px solid var(--gold);
+      margin: var(--space-md) 0;
+      padding: var(--space-md) var(--space-lg);
+      background: var(--gold-pale);
+      font-style: italic;
+      font-size: 13px;
+      color: var(--text-secondary);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    }
+
+    /* Alert Box */
+    .alert {
+      background: var(--gold-pale);
+      border: 1px solid var(--border-gold);
+      padding: var(--space-md) var(--space-lg);
+      border-radius: var(--radius-md);
+      margin-top: var(--space-md);
+    }
+
+    .alert p {
+      color: var(--charcoal);
+      font-size: 13px;
+      margin: 0;
+    }
+
+    /* Highlight */
+    .highlight {
+      font-weight: 600;
+      color: var(--navy);
+    }
+
+    /* Accept Box */
+    .accept-box {
+      background: var(--navy);
+      color: #fff;
+      padding: var(--space-lg);
+      border-radius: var(--radius-md);
+      margin-top: var(--space-lg);
+    }
+
+    .accept-box h3 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 16px;
+      margin-bottom: var(--space-sm);
+      color: var(--gold);
+    }
+
+    .accept-box p {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 13px;
+      margin: 0;
+    }
+
+    /* Print Button */
+    .no-print {
+      text-align: center;
+      margin-bottom: var(--space-lg);
+    }
+
+    button {
+      background: var(--navy);
+      color: white;
+      border: none;
+      padding: var(--space-sm) var(--space-lg);
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      border-radius: var(--radius-sm);
+      transition: all 0.2s ease;
+      font-family: inherit;
+      letter-spacing: 0.3px;
+    }
+
+    button:hover {
+      background: var(--navy-light);
+      box-shadow: var(--shadow-md);
+    }
+
+    /* Footer */
+    footer {
+      margin-top: var(--space-2xl);
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border-soft);
+      padding-top: var(--space-lg);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .page {
+        padding: var(--space-md);
+      }
+
+      .container {
+        padding: var(--space-lg);
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      .grid,
+      .investment-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding-left: var(--space-md);
+      }
+
+      .price {
+        font-size: 24px;
+      }
+    }
+
+    @media print {
+      body {
+        background: white;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      @page {
+        margin: 1.5cm;
+      }
+
+      .page {
+        padding: 0;
+        min-height: auto;
+      }
+
+      .container {
+        max-width: 100%;
+        box-shadow: none;
+        margin: 0;
+        padding: 0;
+        border-radius: 0;
+      }
+
+      .no-print {
+        display: none;
+      }
+
+      .section {
+        page-break-inside: auto;
+        break-inside: auto;
+      }
+
+      h2 {
+        page-break-after: avoid;
+        break-after: avoid;
+      }
+
+      .card,
+      .investment-card,
+      .table-wrapper,
+      table tr {
+        page-break-inside: avoid;
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <div class="no-print">
+      <button onclick="window.print()">Imprimir / Salvar como PDF</button>
+    </div>
+
+    <div class="container">
+      <div class="header">
+        <div class="header-label">Proposta Comercial</div>
+        <h1>Portal Imobiliário Royal Prime</h1>
+        <div class="subtitle">
+          Desenvolvimento de portal integrado à plataforma Imoview
+        </div>
+        <div class="meta">
+          <div class="meta-item">
+            <strong>Data:</strong> 06/04/2026
+          </div>
+          <div class="meta-item">
+            <strong>Validade:</strong> 10 dias corridos
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>1. Objeto</h2>
+        <p>
+          Desenvolvimento de um portal imobiliário web responsivo, com implementação completa do frontend a partir de
+          layout fornecido pelo cliente, contemplando páginas de busca, listagem, detalhe, contato, anúncios, conteúdos
+          institucionais e páginas legais, com integração à API do Imoview para consumo de dados e envio de formulários.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>2. Escopo do Projeto</h2>
+        <ul>
+          <li>Frontend responsivo baseado em layout Figma ou PDF fornecido pelo cliente.</li>
+          <li>Aplicação em Next.js com SSR</li>
+          <li>Integração com API do Imoview para busca, listagem, detalhes, filtros e formulários.</li>
+          <li>Páginas de erro e tratamento visual para indisponibilidade.</li>
+          <li>Publicação inicial em ambiente do cliente.</li>
+        </ul>
+
+        <div class="grid">
+          <div class="card">
+            <h3>Páginas Principais</h3>
+            <ul>
+              <li>Home</li>
+              <li>Buscar Imóveis / Listagem</li>
+              <li>Detalhes do Imóvel</li>
+              <li>Página de Locação</li>
+              <li>Página de Vendas</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Páginas Institucionais</h3>
+            <ul>
+              <li>Contato</li>
+              <li>Anuncie seu Imóvel</li>
+              <li>Sobre</li>
+              <li>Documentos</li>
+              <li>LGPD</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>3. Tecnologias</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>Stack</h3>
+            <ul>
+              <li>Next.js</li>
+              <li>SSR</li>
+              <li>Rotas server/BFF</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Integrações</h3>
+            <ul>
+              <li>API Imoview</li>
+              <li>Sem backend dedicado</li>
+              <li>Sem banco de dados próprio</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>4. Premissas</h2>
+        <ul>
+          <li>Dados provenientes exclusivamente da API do Imoview.</li>
+          <li>Formulários enviados para endpoints do Imoview.</li>
+          <li>Cliente fornece layout, credenciais, conteúdos e hospedagem.</li>
+          <li>Sem painel administrativo ou banco de dados próprio.</li>
+          <li>Integrações externas (WhatsApp, mapas, vídeos) de caráter simples.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>5. Não Incluso</h2>
+        <ul>
+          <li>Criação de layout, UX ou identidade visual.</li>
+          <li>Contratação ou custeio de hospedagem.</li>
+          <li>Painel administrativo próprio.</li>
+          <li>Banco de dados próprio.</li>
+          <li>Produção de conteúdo textual.</li>
+          <li>Manutenção evolutiva fora da garantia.</li>
+          <li>Alterações por mudanças na API do Imoview.</li>
+          <li>Novas funcionalidades não descritas nesta proposta.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>6. Dependências do Cliente</h2>
+        <ul>
+          <li>Layout final aprovado.</li>
+          <li>Documentação e credenciais da API do Imoview.</li>
+          <li>Ambiente de hospedagem.</li>
+          <li>Conteúdos institucionais e legais.</li>
+          <li>Validações nos marcos do projeto.</li>
+        </ul>
+        <div class="alert">
+          <p>
+            <strong>Nota:</strong> O acesso à documentação e credenciais da API é dependência crítica. Limitações ou
+            restrições não documentadas da API do Imoview poderão implicar reavaliação de prazo e escopo.
+          </p>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>7. Garantia</h2>
+        <p>
+          <span class="highlight">15 dias corridos</span> após entrega final, limitada à correção de bugs e falhas do
+          escopo contratado.
+        </p>
+        <p>Não abrange: novas funcionalidades, alterações de layout pós-aprovação, mudanças de regra de negócio ou
+          problemas de terceiros.</p>
+      </div>
+
+      <div class="section">
+        <h2>8. Suporte Mensal</h2>
+        <p>
+          Após a garantia, suporte opcional para correções, ajustes pontuais e acompanhamento operacional.
+        </p>
+        <blockquote>
+          "O suporte mensal constitui serviço opcional e será contratado à parte, mediante valor mensal previamente
+          acordado, contemplando correções pontuais, pequenos ajustes e apoio técnico relacionado ao funcionamento do
+          portal."
+        </blockquote>
+      </div>
+
+      <div class="section">
+        <h2>9. Prazo</h2>
+        <p>
+          <span class="highlight">8 semanas</span>, contadas do recebimento de todos os insumos: layout, credenciais da
+          API e conteúdos.
+        </p>
+        <p>Prazo sujeito a revisão em caso de atraso no envio de materiais ou validações.</p>
+      </div>
+
+      <div class="section">
+        <h2>10. Estimativa de Esforço</h2>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Épico</th>
+                <th>Horas</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Descoberta técnica e arquitetura</td>
+                <td>10h</td>
+              </tr>
+              <tr>
+                <td>Integração Imoview e camada BFF</td>
+                <td>28h</td>
+              </tr>
+              <tr>
+                <td>Home</td>
+                <td>14h</td>
+              </tr>
+              <tr>
+                <td>Busca e listagem</td>
+                <td>20h</td>
+              </tr>
+              <tr>
+                <td>Detalhe do imóvel</td>
+                <td>24h</td>
+              </tr>
+              <tr>
+                <td>Formulários e captação de leads</td>
+                <td>18h</td>
+              </tr>
+              <tr>
+                <td>Páginas Locação e Vendas</td>
+                <td>12h</td>
+              </tr>
+              <tr>
+                <td>Institucionais e legais</td>
+                <td>10h</td>
+              </tr>
+              <tr>
+                <td>SEO técnico básico e performance</td>
+                <td>12h</td>
+              </tr>
+              <tr>
+                <td>Publicação e observabilidade</td>
+                <td>6h</td>
+              </tr>
+              <tr>
+                <td>QA integrado e regressão</td>
+                <td>16h</td>
+              </tr>
+              <tr>
+                <td>Go-live e estabilização</td>
+                <td>10h</td>
+              </tr>
+              <tr class="total-row">
+                <td>Total</td>
+                <td>180h</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>11. Investimento</h2>
+        <div class="investment-grid">
+          <div class="investment-card">
+            <h3>Projeto</h3>
+            <div class="price">R$ 8.100</div>
+            <div class="price-note">180h × R$ 45,00/h</div>
+            <p style="font-size: 13px; font-weight: 500; color: var(--navy); margin-bottom: 4px;">Pagamento:</p>
+            <ul class="payment-list">
+              <li>40% na aprovação</li>
+              <li>30% na entrega para validação</li>
+              <li>30% na entrega final</li>
+            </ul>
+          </div>
+          <div class="investment-card support">
+            <h3>Suporte Mensal</h3>
+            <div class="price">R$ 200<span style="font-size: 16px; font-weight: 400;">/mês</span></div>
+            <div class="price-note">Contratação opcional</div>
+            <p style="font-size: 13px; color: var(--text-secondary);">
+              Correções pontuais, pequenos ajustes e apoio técnico operacional.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>12. Revisões e Mudanças</h2>
+        <p>
+          Novas funcionalidades ou alterações estruturais serão orçadas separadamente, com impacto em prazo e custo.
+        </p>
+      </div>
+
+
+      <footer>
+        Royal Prime — Proposta Comercial · Portal Imobiliário
+      </footer>
+    </div>
+  </div>
+</body>
+
+</html>
