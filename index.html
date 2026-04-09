@@ -513,7 +513,7 @@
         </div>
         <div class="meta">
           <div class="meta-item">
-            <strong>Data:</strong> 06/04/2026
+            <strong>Data:</strong> <span id="data-atual">06/04/2026</span>
           </div>
           <div class="meta-item">
             <strong>Validade:</strong> 10 dias corridos
@@ -765,6 +765,16 @@
       </footer>
     </div>
   </div>
+
+  <script>
+    // Quando o documento carregar, insere a data atual do sistema usando o formato brasileiro.
+    document.addEventListener("DOMContentLoaded", () => {
+      const dataAtualElemento = document.getElementById("data-atual");
+      if (dataAtualElemento) {
+        dataAtualElemento.textContent = new Date().toLocaleDateString("pt-BR");
+      }
+    });
+  </script>
 </body>
 
 </html>
